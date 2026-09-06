@@ -1,0 +1,12 @@
+¿Qué agentes salieron con el oro? Los tres razonadores?
+03, 04, 05 y El reflejo simple no.
+
+¿Por qué falla el reflejo simple? 
+Porque la decisión la hace solo con lo que percibe en el momento y no tiene memoria. Con la brisa del pit de (4,1) cerca del pasillo, la regla de brisa turn right lo hace girar sin cambiar de casilla, la brisa sigue ahí pero no lo recuerda, y vuelve a girar. Al no tener memoria no recuerda que esta repitiendo estados.
+
+
+¿Cómo cambia el resultado del agente basado en modelo si acercas o alejas un pit de la casilla inicial?
+Con el pit lejos del inicio, en (4,1): sale con el oro, 35 pasos, 965 puntos.
+Con el pit cerca del inicio, en (2,2): no sale, 200 pasos, −200 puntos.
+
+La diferencia es que (2,2) es vecina de (2,1) y (1,2). Su brisa las contamina a ambas, y el agente se queda sin ninguna opción demostrable. Exploró ambas salidas, retrocedió, y terminó girando en su lugar hasta agotar max_steps.Lo que determina el resultado no es la distancia del pit, sino si su brisa alcanza a cubrir todas las salidas de la casilla inicial.
