@@ -1,2 +1,51 @@
+Asistente virtual de voz (p. ej. Siri, Alexa o Google Assistant en un altavoz inteligente).
+- **Performance:** ... Precisión, Satisfacción del usuario, cumplimiento del comando
+- **Environment:** ... Parcialmente observable, Determinista, No discreto
+- **Actuators:** ... La emisión de respuesta con la bocina
+- **Sensors:** ... Micrófono para la recepción de información
 
-por llenar
+Robot aspirador doméstico (p. ej. Roomba u otro robot que limpia pisos de un departamento).
+**Performance:** ... Calidad de limpieza, cantidad de colisiones ,cantidad de polvo que limpio, cantidad de espacio que haya logrado cubrir.
+**Environment:** ... Parcialmente observable solo puede observar el espacio en el que se encuentra
+**Actuators:** ... La succión de polvo, las ruedas para el movimiento
+**Sensors:** ... Ultrasónico para detectar distancia de objetos, giroscopio y acelerómetro para distancia y vueltas.
+
+3. Sistema de recomendación de streaming (p. ej. Netflix o Spotify que sugiere películas o canciones).
+**Performance:** ...Afinidad a los gustos del cliente
+**Environment:** ... No episódico, depende de su memoria para poder recomendar 
+**Actuators:** ...Mensaje de notificación, el mensaje de recomendación
+**Sensors:** ...Tiempo de Permanencia viendo una película o una canción
+
+
+4. Vehículo autónomo en ciudad (conducción sin conductor en calles urbanas con tráfico y peatones).
+ **Performance:** ... Lograr llegar al destino, tiempo, calidad de la ruta, seguridad
+**Environment:** ...La calle, la ciudad donde se este, es parcialmente observable solo conoce donde esta manejando, es dinámico su mundo esta constantemente cambiando
+**Actuators:** ...La pantalla, el volante, freno.
+**Sensors:** ...Cámara, acelerómetro, Gps, 
+
+5. Agente de trading algorítmico en bolsa (compra y venta automática de acciones en mercados financieros).
+**Performance:** ... Cumplimiento de la compra y venta, calidad de para elegir acciones con potencial, % de rendimiento
+**Environment:** ... Parcialmente observable, secuencial, dinámico
+**Actuators:** ... Emisión de compra o ventas
+**Sensors:** ...Indicadores, APIs
+
+6. Sistema de diagnóstico médico asistido por IA (apoya a un médico a interpretar síntomas e imágenes clínicas).
+**Performance:** ...Precisión, bajo margen de error , básicamente que la interpretación sea fiable y falle poco.
+**Environment:** ... Parcialmente observable solo se conocen algunos datos del paciente.
+**Actuators:** ... Emisión resultados, alertas.
+**Sensors:** ... Dato de síntomas o del paciente, imágenes médicas, Audios.
+
+
+7. Dron de inspección de infraestructura (revisa grietas, corrosión o fugas en puentes, tuberías o líneas eléctricas).
+**Performance:** ...   Detectar el máximo de grietas, corrosión o fugas reales, minimizando falsas alarmas
+**Environment:** ...Parcialmente observable, solo revisa la zona o casa donde este analizando.
+**Actuators:** ...Motores, mensajes que genere para alertar o notificar hallazgos
+**Sensors:** ... Gps, cámara, acelerometro
+
+8. Agente jugador de ajedrez (programa que compite contra un humano u otro agente en partidas completas).
+**Performance:** ... Partidas ganadas, cantidad de jugadas realizadas tanto de ofensa como de defensa
+**Environment:** ... Observable y determinista
+**Actuators:** ... los movimientos.
+**Sensors:** ... Posiciones del tablero propios y del oponente
+
+
