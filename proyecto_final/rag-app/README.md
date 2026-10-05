@@ -18,8 +18,6 @@ Usuario
                     └── Google AI (gemini-3.6-flash) → Generación anclada con citas
 ```
 
-> **TODO (confirmar):** verifica que el nombre del modelo de generación (`gemini-3.6-flash`) exista en Google AI Studio e indica en qué archivo o variable se cambia (por ejemplo, `app/generate.py`).
-
 ---
 
 ## Estructura del Proyecto
@@ -52,7 +50,6 @@ proyecto_final/rag-app/
 ## Requisitos Previos
 
 - **Python:** versión 3.X o superior. 
-  > **TODO (confirmar):** indica la versión con la que probaste el proyecto (por ejemplo, 3.11).
 - **Una API Key de Google AI** (ver paso 1 de la instalación).
 - Dos terminales disponibles (una para la API y otra para la UI).
 
@@ -133,25 +130,6 @@ Abre `.env` y coloca tu clave:
 ```env
 GOOGLE_API_KEY=tu_clave_de_google_ai_aqui
 ```
-
-> El archivo `.env` contiene un secreto y **no debe subirse al repositorio** (debe estar en `.gitignore`).
-
-> **TODO (confirmar):** esta opción funciona solo si el código carga el `.env` automáticamente (por ejemplo, con `python-dotenv`). Si no es así, usa la opción B.
-
-**Opción B: exportar la clave en la terminal**
-
-```powershell
-# Windows (PowerShell)
-$env:GOOGLE_API_KEY="tu_clave_de_google_ai_aqui"
-```
-
-```bash
-# macOS / Linux
-export GOOGLE_API_KEY="tu_clave_de_google_ai_aqui"
-```
-
-La variable solo dura mientras la terminal esté abierta, y debe definirse en la terminal donde se levanta la API.
-
 ---
 
 ## Ejecución del Sistema
@@ -184,8 +162,6 @@ streamlit run ui/streamlit_app.py
 ## Verificación y Casos de Prueba
 
 Los ejemplos de abajo usan el corpus de prueba incluido en `data/` (5 documentos sobre las Normas Globales de Auditoría Interna del IIA). Si usas otro corpus, adapta las preguntas.
-
-> **TODO (confirmar):** copia los 5 archivos `.md` del corpus a la carpeta `data/` del repositorio para que otra persona pueda reproducir estas pruebas.
 
 ### 1. Ingesta de documentos
 
@@ -220,14 +196,3 @@ Para una prueba más exigente, usa una pregunta cercana al tema pero sin respues
 **Comportamiento esperado:** el sistema no inventa datos y responde explícitamente *"no tengo evidencia suficiente"*, activando la bandera `"abstained": true` en el endpoint `/query`.
 
 ---
-
-## Solución de Problemas Comunes
-
-| Problema | Causa probable | Solución |
-|---|---|---|
-| `Activate.ps1` no se ejecuta en Windows | Política de ejecución de PowerShell | Ejecuta `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` y vuelve a intentar |
-| La UI no responde o muestra error de conexión | La API no está corriendo | Verifica <http://localhost:8000/health> antes de abrir la UI |
-| Error de autenticación con Google AI | `GOOGLE_API_KEY` ausente o incorrecta | Revisa el `.env` o la variable exportada, y reinicia la API |
-| `Address already in use` | Puerto 8000 u 8501 ocupado | Cierra el proceso que lo usa o cambia el puerto con `--port` |
-| `ModuleNotFoundError` al iniciar | Entorno virtual inactivo o comando ejecutado fuera de `rag-app/` | Activa el entorno y ejecuta desde la raíz del proyecto |
-| Respuestas de un corpus anterior | El índice persistido conserva documentos previos | Detén la API, borra la carpeta `chroma/` y vuelve a ingestar |
